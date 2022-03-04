@@ -38,13 +38,11 @@ class RiwayatbeliController extends Controller
     {
         RiwayatbeliModel::create($request->all());
         Request()->validate([
-            'id' => 'required',
             'rekening_id' => 'required',
             'ikan_id' => 'required',
             'jumlah_beli' => 'required',
             'kwitansi' => 'required',
         ],[
-            'id.required'=>' id wajib diisi !!',
             'rekening_id.required'=>' rekening id wajib diisi !!',
             'ikan_id.required' => 'ikan id wajib diisi !!',
             'jumlah_beli.required' => 'jumlah beli wajib diisi !!',
@@ -67,13 +65,11 @@ class RiwayatbeliController extends Controller
         $riwayatbeli = RiwayatbeliModel::find($id);
         $riwayatbeli->update($request->all());
         Request()->validate([
-            'id' => 'required',
             'rekening_id' => 'required',
             'ikan_id' => 'required',
             'jumlah_beli' => 'required',
             'kwitansi' => 'required',
         ],[
-            'id.required'=>' id wajib diisi !!',
             'rekening_id.required'=>' rekening id wajib diisi !!',
             'ikan_id.required' => 'ikan id wajib diisi !!',
             'jumlah_beli.required' => 'jumlah beli wajib diisi !!',

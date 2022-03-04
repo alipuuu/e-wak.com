@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Dataikan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DataikanController;
@@ -30,23 +29,20 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/dataikan', [DataikanController::class,'index'])->name('dataikan');
-Route::get('/create',[DataikanController::class,'create']);
-Route::get('/store',[DataikanController::class,'store']);
-Route::get('/read',[DataikanController::class,'read']);
 
     Route::get('/dataikan', [DataikanController::class,'index'])->name('dataikan');
-    Route::post('/dataikan/insert_dataikan', [DataikanController::class,'insert_dataikan'])->name('dataikan');
-    Route::post('/dataikan/update_dataikan/{id}', [DataikanController::class,'update_dataikan'])->name('dataikan');
-    Route::get('/dataikan/delete_dataikan/{id}', [DataikanController::class,'delete_dataikan'])->name('dataikan');
+    Route::get('/dataikan/insert_dataikan',[DataikanController::class,'insert_dataikan']);
+    Route::post('/dataikan/update_dataikan/', [DataikanController::class,'update_dataikan']);
+    Route::get('/dataikan/delete_dataikan/{id}', [DataikanController::class,'delete_dataikan']);
     Route::get('/user', [UserController::class, 'index'])->name('user');
-    Route::get('/dataikan/printer_dataikan', [DataikanController::class,'printer_dataikan'])->name('dataikan');
-    Route::get('/dataikan/printpdf_dataikan', [DataikanController::class,'printpdf_dataikan'])->name('dataikan');
+    Route::get('/dataikan/printer_dataikan', [DataikanController::class,'printer_dataikan']);
+    Route::get('/dataikan/printpdf_dataikan', [DataikanController::class,'printpdf_dataikan']);
     Route::get('/pelanggan', [PelangganController::class, 'index'])->name('pelanggan');
 
 
     Route::get('/dataku', [DatakuController::class,'index'])->name('dataku');
-    Route::post('/dataku/insert_dataku', [DatakuController::class,'insert_dataku']);
-    Route::post('/dataku/update_dataku/{id}', [DatakuController::class,'update_dataku']);
+    Route::get('/dataku/insert_dataku', [DatakuController::class,'insert_dataku']);
+    Route::get('/dataku/update_dataku/', [DatakuController::class,'update_dataku']);
     Route::get('/dataku/delete_dataku/{id}', [DatakuController::class,'delete_dataku']);
     Route::get('/user', [UserController::class, 'index'])->name('user');
     Route::get('/dataku/printer_dataku', [DatakuController::class,'printer_dataku']);
@@ -55,7 +51,7 @@ Route::get('/read',[DataikanController::class,'read']);
 
 
     Route::get('/kapal', [KapalController::class,'index'])->name('kapal');
-    Route::post('/kapal/insert_kapal', [KapalController::class,'insert_kapal']);
+    Route::get('/kapal/insert_kapal', [KapalController::class,'insert_kapal']);
     Route::post('/kapal/update_kapal/{id}', [KapalController::class,'update_kapal']);
     Route::get('/kapal/delete_kapal/{id}', [KapalController::class,'delete_kapal']);
     Route::get('/user', [UserController::class, 'index'])->name('user');

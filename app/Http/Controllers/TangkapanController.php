@@ -25,13 +25,13 @@ class TangkapanController extends Controller
     public function add_tangkapan()
     {
         $tangkapan = TangkapanModel::all();
-        return view('tangkapan.v_add_tangkapan', compact('tangkapan'));
+        return view('tangkapan.v_tangkapan', compact('tangkapan'));
     }
 
     public function edit_tangkapan($id)
     {
         $tangkapan = TangkapanModel::find($id);
-        return view('tangkapan.v_edit_tangkapan', compact('tangkapan'));
+        return view('tangkapan.v_tangkapan', compact('tangkapan'));
     }
 
     public function insert_tangkapan(Request $request)

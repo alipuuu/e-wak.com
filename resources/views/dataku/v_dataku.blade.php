@@ -29,7 +29,7 @@
                 <a href="/dataku/printpdf_dataku" target="_blank" class="btn btn-sm bg-navy">Print To PDF</a>
                 </div>
             <div class="box-body">
-            <table id="example1" class="table table-bordered table-striped">
+            <table class="table table-bordered table-striped">
               <thead>
               <tr>
                 <th class="text-center">Date</th>
@@ -39,7 +39,8 @@
                 <th class="text-center">Lat</th>
                 <th class="text-center">Longitude</th>
                 <th class="text-center">Message</th>
-                <th class="text-center">Dibuat</th>
+                <th class="text-center">Created At</th>
+                <th class="text-center">Updated At</th>
                 <th class="text-center">Action</th>
               </tr>
               </thead>
@@ -55,9 +56,10 @@
                         <td class="text-center">{{ $data->longitude}}</td>
                         <td class="text-center">{{ $data->message}}</td>
                         <td class="text-center">{{ $data->created_at}}</td>
+                        <td class="text-center">{{ $data->updated_at}}</td>
                         <td class="text-center" >
                             <a class="btn btn-sm btn-success" data-toggle="modal" data-target="#detail{{ $data->id}}">Detail</a>
-                            <a class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit{{ $data->id}}">Edit</a>
+                            <a class="btn btn-sm btn-warning" data-toggle="modal" data-target="#update{{ $data->id}}">Update</a>
                             <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete{{ $data->id}}">Delete</a>
                         </td>
                     </tr>
@@ -92,7 +94,7 @@
                             <span aria-hidden="true">&times;</span></button>
                             <h5 class="modal-title">TAMBAH DATA</h5>
                         </div>
-                        <form action="" method="POST" enctype="multipart/form-data">
+                        <form action="/dataku/insert_dataku" method="GET" enctype="multipart/form-data">
                             {{ csrf_field() }}
                         <div class="modal-body">
                             <div class="form-group">
@@ -160,22 +162,23 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button class="btn btn-primary" type="submit">Save Data</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
+                        </form>
                         </div>
                     </div>
                 </div>
                 @foreach ($dataku as $data)
-                  <div class="modal fade" id="edit{{ $data->id}}">
+                  <div class="modal fade" id="update{{ $data->id}}">
                     <div class="modal-dialog modal-lg">
                       <div class="modal-content">
                         <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span></button>
-                          <h5 class="modal-title">EDIT DATA {{ $data->id}}</h5>
+                          <h5 class="modal-title">UPDATE DATA {{ $data->id}}</h5>
                         </div>
-                        <form action="" method="POST" enctype="multipart/form-data">
+                        <form action="/dataku/update_dataku" method="GET" enctype="multipart/form-data">
                             <div class="modal-body">
                                 <div class="form-group">
                                 <label>Tanggal</label>
@@ -241,7 +244,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button class="btn btn-primary" type="submit">Update Data</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                             </div>

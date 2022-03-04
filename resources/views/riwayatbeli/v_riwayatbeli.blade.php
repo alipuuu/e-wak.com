@@ -37,6 +37,7 @@
                 <th class="text-center">Jumlah Beli</th>
                 <th class="text-center">Kwitansi</th>
                 <th class="text-center">Created At</th>
+                <th class="text-center">Updated At</th>
                 <th class="text-center">Action</th>
               </tr>
               </thead>
@@ -49,6 +50,7 @@
                         <td class="text-center">{{ $data->jumlah_beli}}</td>
                         <td class="text-center">{{ $data->kwitansi}}</td>
                         <td class="text-center">{{ $data->created_at}}</td>
+                        <td class="text-center">{{ $data->updated_at}}</td>
                         <td class="text-center">
                             <a class="btn btn-sm btn-success" data-toggle="modal" data-target="#detail{{ $data->id}}">Detail</a>
                             <a class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit{{ $data->id}}">Edit</a>
@@ -64,7 +66,7 @@
                             <span aria-hidden="true">&times;</span></button>
                             <h5 class="modal-title">TAMBAH DATA</h5>
                         </div>
-                        <form action="" method="POST" enctype="multipart/form-data">
+                        <form action="/riwayatbeli/insert_riwayatbeli" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
                         <div class="modal-body">
                             <div class="form-group">
@@ -105,7 +107,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button class="btn btn-primary" type="submit">Update Data</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                         </div>
@@ -120,7 +122,7 @@
                             <span aria-hidden="true">&times;</span></button>
                           <h5 class="modal-title">EDIT DATA {{ $data->id}}</h5>
                         </div>
-                        <form action="" method="POST" enctype="multipart/form-data">
+                        <form action="/riwayatbeli/update_riwayatbeli" method="POST" enctype="multipart/form-data">
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label>Rekening ID</label>
@@ -159,7 +161,7 @@
                                     </div>
                                 </div>
                             <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button class="btn btn-primary" type="submit">Save Data</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                             </div>

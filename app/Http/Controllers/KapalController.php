@@ -26,13 +26,13 @@ class KapalController extends Controller
     public function add_kapal()
     {
         $kapal = KapalModel::all();
-        return view('kapal.v_add_kapal', compact('kapal'));
+        return view('kapal.v_kapal', compact('kapal'));
     }
 
     public function edit_kapal($id)
     {
         $kapal = KapalModel::find($id);
-        return view('kapal.v_edit_kapal', compact('kapal'));
+        return view('kapal.v_kapal', compact('kapal'));
     }
 
     public function insert_kapal(Request $request)

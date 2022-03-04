@@ -26,13 +26,13 @@ class TrackController extends Controller
     public function add_track()
     {
         $track = TrackModel::all();
-        return view('track.v_add_track', compact('track'));
+        return view('track.v_track', compact('track'));
     }
 
     public function edit_track($id)
     {
         $track = TrackModel::find($id);
-        return view('track.v_edit_track', compact('track'));
+        return view('track.v_track', compact('track'));
     }
 
     public function insert_track(Request $request)

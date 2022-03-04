@@ -25,21 +25,20 @@ class DatakuController extends Controller
     public function add_dataku()
     {
         $dataku = DatakuModel::all();
-        return view('dataku.v_add_dataku', compact('dataku'));
+        return view('dataku.v_dataku', compact('dataku'));
     }
 
     public function edit_dataku($id)
     {
         $dataku = DatakuModel::find($id);
-        return view('dataku.v_edit_dataku', compact('dataku'));
+        return view('dataku.v_dataku', compact('dataku'));
     }
 
     public function insert_dataku(Request $request)
     {
-        DatakuModel::create($request->all());
+        //DatakuModel::create($request->all());
         Request()->validate([
-            'id' => 'required',
-            'tanggal' => 'required',
+            'date' => 'required',
             'source_id' => 'required',
             'crew' => 'required',
             'dest_id' => 'required',
@@ -47,8 +46,7 @@ class DatakuController extends Controller
             'longitude' => 'required',
             'message' => 'required',
         ],[
-            'id.required'=>' id wajib diisi !!',
-            'tanggal.required'=>' tanggal wajib diisi !!',
+            'date.required'=>' tanggal wajib diisi !!',
             'source_id.required' => 'source id wajib diisi !!',
             'crew.required' => 'crew wajib diisi !!',
             'dest_id.required' => 'dest id wajib diisi !!',
@@ -58,8 +56,7 @@ class DatakuController extends Controller
         ]);
 
         $dataku = [
-            'id' => Request()->id,
-            'tanggal' => Request()->tanggal,
+            'date' => Request()->date,
             'source_id' => Request()->source_id,
             'crew' => Request()->crew,
             'dest_id' => Request()->dest_id,
@@ -68,34 +65,32 @@ class DatakuController extends Controller
             'message' => Request()->message,
         ];
         $this->DatakuModel->addData($dataku);
-        return redirect()->route('dataku');
+        return redirect()->route('dataku')->with('pesan', 'Data berhasil ditambahkan!');
     }
 
-    public function update_dataku(Request $request, $id)
+    public function update_dataku(Request $request)
     {
-        $dataku = DatakuModel::find($id);
+        $dataku = DatakuModel::find($request->id);
         $dataku->update($request->all());
-        Request()->validate([
-            'id' => 'required',
-            'tanggal' => 'required',
-            'source_id' => 'required',
-            'crew' => 'required',
-            'dest_id' => 'required',
-            'lat' => 'required',
-            'longitude' => 'required',
-            'message' => 'required',
-        ],[
-            'id'=>' id dataku wajib diisi !!',
-            'tanggal.required'=>' tanggal wajib diisi !!',
-            'source_id.required' => 'source id wajib diisi !!',
-            'crew.required' => 'crew wajib diisi !!',
-            'dest_id.required' => 'dest id wajib diisi !!',
-            'lat.required' => 'lat wajib diisi !!',
-            'longitude.required' => 'longitude wajib diisi !!',
-            'message.required' => 'message wajib diisi !!',
-        ]);
-        $this->DatakuModel->editData($dataku);
-        return redirect()->route('dataku');
+        // Request()->validate([
+        //     'date' => 'required',
+        //     'source_id' => 'required',
+        //     'crew' => 'required',
+        //     'dest_id' => 'required',
+        //     'lat' => 'required',
+        //     'longitude' => 'required',
+        //     'message' => 'required',
+        // ],[
+        //     'date.required'=>' tanggal wajib diisi !!',
+        //     'source_id.required' => 'source id wajib diisi !!',
+        //     'crew.required' => 'crew wajib diisi !!',
+        //     'dest_id.required' => 'dest id wajib diisi !!',
+        //     'lat.required' => 'lat wajib diisi !!',
+        //     'longitude.required' => 'longitude wajib diisi !!',
+        //     'message.required' => 'message wajib diisi !!',
+        // ]);
+        // $this->DatakuModel->editData($dataku);
+        return redirect()->route('dataku')->with('pesan', 'Data berhasil diupdate!');;
     }
 
     public function delete_dataku($id)

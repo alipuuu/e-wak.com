@@ -20,6 +20,7 @@ class CreateDataikanTable extends Migration
             $table->string('harga_ikan');
             $table->string('stock_ikan');
             $table->timestamps();
+
         });
     }
 

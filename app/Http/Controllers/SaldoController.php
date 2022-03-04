@@ -25,13 +25,13 @@ class SaldoController extends Controller
     public function add_saldo()
     {
         $saldo = SaldoModel::all();
-        return view('saldo.v_add_saldo', compact('saldo'));
+        return view('saldo.v_saldo', compact('saldo'));
     }
 
     public function edit_saldo($id)
     {
         $saldo = SaldoModel::find($id);
-        return view('saldo.v_edit_saldo', compact('saldo'));
+        return view('saldo.v_saldo', compact('saldo'));
     }
 
     public function insert_saldo(Request $request)

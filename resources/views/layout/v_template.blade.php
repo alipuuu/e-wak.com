@@ -4,8 +4,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>projek alipu</title>
-  <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -30,7 +28,7 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-green sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
 
@@ -185,47 +183,7 @@
   $(document).ready(function () {
     $('.sidebar-menu').tree()
     $('#table').DataTable();
-    read()
-  });
-
-  // read database
-  function read(){
-      $.get("{{url('read')}}",{},function(data,status){
-          $("#read").html(data);
-      });
-  }
-
-
-  // untuk halaman modal create
-  function create() {
-        $.get("{{url('create')}}",{},function(data,status){
-            $("#exampleModalLabel").html('Tambah Data Dataikan');
-            $("#page").html(data);
-            $("#exampleModal").modal('show');
-        });
-    }
-
-    // untuk halaman modal store
-  function store() {
-        var nama_ikan = $("#nama_ikan").val();
-        var jenis_ikan = $("#jenis_ikan").val();
-        var harga_ikan = $("#harga_ikan").val();
-        var stock_ikan = $("#stock_ikan").val();
-        $.ajax({
-            type:"get",
-            url:"{{url('store')}}",
-            data:"nama_ikan"+nama_ikan,
-            data:"jenis_ikan"+jenis_ikan,
-            data:"harga_ikan"+harga_ikan,
-            data:"stock_ikan"+stock_ikan,
-            success:function(data) {
-                $(".close").click();
-                $("#page").html('');
-                read()
-            }
-        });
-    }
-  </script>
+  })
   <!-- jQuery 3 -->
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
@@ -292,11 +250,6 @@
 		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
 	}
 	// ]]>
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    </script>
+</script>
 </body>
 </html>
