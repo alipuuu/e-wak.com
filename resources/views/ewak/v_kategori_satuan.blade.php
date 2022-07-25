@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Flickity CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>e-wak | Kategori</title>
+      <link rel="icon" type="image/x-icon" href="{{asset('template')}}/dist/img/splash-fish.svg">
+
+    <!-- Custom Styling -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+</head>
+<body>
+    <!-- Whatsapp Button -->
+    <a href="" class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
+    <!-- Navbar Kompleks -->
+    <nav class="navbar-top navbar navbar-expand-lg navbar-light bg-light shadow">
+        <a class="nav-link i-kan i-kan-utama navbar-brand" href="/"><b><i>e</i>-wak</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="material-icons mr-2">category</i>Kategori
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="material-icons mr-2">help</i>Cara Belanja
+                </a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link" href="/ewak/lokasi">
+                        <i class="material-icons mr-2">map</i>Lokasi Penangkapan
+                    </a>
+                </li>
+          </ul>
+          <form>
+                <div class="form-inline" >
+                    <input class="flex-fill form-control mr-sm-2" type="search" placeholder="Cari" aria-label="Search" >
+                </div>
+          </form>
+          <div class="d-flex flex-row-revers">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/ewak/keranjang">
+                        <i class="material-icons mr-2">shopping_cart</i>Keranjang
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">
+                        <i class="material-icons mr-2">person</i>Akun
+                    </a>
+                </li>
+            </ul>
+          </div>
+
+        </div>
+    </nav>
+
+    <!-- Content -->
+
+    <!-- Kategori -->
+    <div class="container kategori">
+        <div class="my-5">
+            <h5><b>Satuan</b></h5>
+
+            <div class="row">
+
+                <div class="col-12 col-md-3 mt-3">
+                    <!-- Card Produk -->
+                    <div class="produk">
+                        <!-- Discount tag -->
+                        <div class="discount shadow">
+                            -69%
+                        </div>
+                        <div class="card card-product rounded">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-center">
+                                    <img src="{{url('assets/iwak14.jpg')}}" class="img-product" alt="">
+                                </div>
+                                <table class="d-flex justify-content-center mt-2">
+                                    <tbody>
+                                        <tr class="d-flex justify-content-center">
+                                            <td colspan="2"><b>Nama Produk</b></td>
+                                        </tr>
+                                        <tr class="d-flex justify-content-center p">
+                                            <td><b>Harga</b></td>
+                                            <td>Rp ???</td>
+                                        </tr>
+                                        <tr class="d-flex justify-content-center p">
+                                            <td><b>Stok</b></td>
+                                            <td>???</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mt-3 btn btn-ikan">Detail</button>
+                </div>
+
+                <div class="col-12 col-md-3 mt-3">
+                    <!-- Card Produk -->
+                    <div class="produk">
+                        <!-- Discount tag -->
+                        <div class="discount shadow">
+                            -69%
+                        </div>
+                        <div class="card card-product rounded">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-center">
+                                    <img src="{{url('assets/iwak14.jpg')}}" class="img-product" alt="">
+                                </div>
+                                <table class="d-flex justify-content-center mt-2">
+                                    <tbody>
+                                        <tr class="d-flex justify-content-center">
+                                            <td colspan="2"><b>Nama Produk</b></td>
+                                        </tr>
+                                        <tr class="d-flex justify-content-center p">
+                                            <td><b>Harga</b></td>
+                                            <td>Rp ???</td>
+                                        </tr>
+                                        <tr class="d-flex justify-content-center p">
+                                            <td><b>Stok</b></td>
+                                            <td>???</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mt-3 btn btn-ikan">Detail</button>
+                </div>
+
+                <div class="col-12 col-md-3 mt-3">
+                    <!-- Card Produk -->
+                    <div class="produk">
+                        <!-- Discount tag -->
+                        <div class="discount shadow">
+                            -69%
+                        </div>
+                        <div class="card card-product rounded">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-center">
+                                    <img src="{{url('assets/iwak15.jpeg')}}" class="img-product" alt="">
+                                </div>
+                                <table class="d-flex justify-content-center mt-2">
+                                    <tbody>
+                                        <tr class="d-flex justify-content-center">
+                                            <td colspan="2"><b>Nama Produk</b></td>
+                                        </tr>
+                                        <tr class="d-flex justify-content-center p">
+                                            <td><b>Harga</b></td>
+                                            <td>Rp ???</td>
+                                        </tr>
+                                        <tr class="d-flex justify-content-center p">
+                                            <td><b>Stok</b></td>
+                                            <td>???</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mt-3 btn btn-ikan">Detail</button>
+                </div>
+
+                <div class="col-12 col-md-3 mt-3">
+                    <!-- Card Produk -->
+                    <div class="produk">
+                        <!-- Discount tag -->
+                        <div class="discount shadow">
+                            -69%
+                        </div>
+                        <div class="card card-product rounded">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-center">
+                                    <img src="{{url('assets/iwak15.jpeg')}}" class="img-product" alt="">
+                                </div>
+                                <table class="d-flex justify-content-center mt-2">
+                                    <tbody>
+                                        <tr class="d-flex justify-content-center">
+                                            <td colspan="2"><b>Nama Produk</b></td>
+                                        </tr>
+                                        <tr class="d-flex justify-content-center p">
+                                            <td><b>Harga</b></td>
+                                            <td>Rp ???</td>
+                                        </tr>
+                                        <tr class="d-flex justify-content-center p">
+                                            <td><b>Stok</b></td>
+                                            <td>???</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mt-3 btn btn-ikan">Detail</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    {{-- <!-- Bottom Navbar -->
+    <nav class="navbar-bottom shadow-lg navbar fixed-bottom navbar-light" style="background-color: orangered;">
+        <a class="nav-link" href="#" style="color: white">
+            <small><i class="material-icons mr-2" style="font-size: 16px">category</i>Kategori</small>
+        </a>
+        <a class="nav-link" href="/ewak/keranjang" style="color: white">
+            <small><i class="material-icons mr-2" style="font-size: 16px">shopping_cart</i>Keranjang</small>
+        </a>
+        <a class="nav-link" href="/ewak/register" style="color: white">
+            <small><i class="material-icons mr-2"style="font-size: 16px"> person</i>Akun</small>
+        </a>
+    </nav> --}}
+
+    <!-- Flickity JS -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

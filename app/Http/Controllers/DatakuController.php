@@ -90,7 +90,7 @@ class DatakuController extends Controller
         //     'message.required' => 'message wajib diisi !!',
         // ]);
         // $this->DatakuModel->editData($dataku);
-        return redirect()->route('dataku')->with('pesan', 'Data berhasil diupdate!');;
+        return redirect()->route('dataku')->with('pesan', 'Data berhasil diupdate!');
     }
 
     public function delete_dataku($id)

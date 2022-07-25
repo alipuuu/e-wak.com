@@ -25,11 +25,9 @@
             </div>
                 <div class="text-center">
                 <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah">Tambah Data</a>
-                <a href="/dataikan/printer_dataikan" target="_blank" class="btn btn-sm bg-maroon">Print To Printer</a>
-                <a href="/dataikan/printpdf_dataikan" target="_blank" class="btn btn-sm bg-navy">Print To PDF</a>
                 </div>
             <div class="box-body">
-            <table class="table table-bordered table-striped">
+            <table id="table-datatables" class="table table-bordered table-striped">
               <thead>
               <tr>
                 <th class="text-center">Nama Ikan</th>

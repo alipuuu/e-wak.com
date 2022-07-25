@@ -1,131 +1,170 @@
-
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Log in</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="{{asset('template')}}/bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset('template')}}/bower_components/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="{{asset('template')}}/bower_components/Ionicons/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset('template')}}/dist/css/AdminLTE.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="{{asset('template')}}/plugins/iCheck/square/blue.css">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
 
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-</head>
-<body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <a href="../../index2.html"><b>Login</b>User</a>
-  </div>
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
-      <div class="form-group has-feedback">
-        <input type="email" name="email" class="form-control" placeholder="Email">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-        @error('email')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-        @enderror
+    <title>e-wak | Masuk</title>
+      <link rel="icon" type="image/x-icon" href="{{asset('template')}}/dist/img/splash-fish.svg">
+
+   <!-- Custom Styling -->
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <!-- Navbar Polos -->
+    <nav
+      class="navbar navbar-light bg-light bg-light shadow mb-5 bg-body rounded"
+    >
+      <div class="container-fluid d-flex justify-content-center">
+        <div class="row">
+          <div class="col">
+            <a class="nav-link i-kan" href="/"
+              ><b><i>e</i>-wak</b></a>
+          </div>
+        </div>
       </div>
-      <div class="form-group has-feedback">
-        <input type="password" name="password" class="form-control" placeholder="Password">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-        @error('password')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-        @enderror
-      </div>
+    </nav>
+
+    <div class="container">
       <div class="row">
-        <div class="col-xs-8">
+        <div class="col-md-6">
+          <img class="splash-fish mt-5" src="assets/splash-fish.svg" alt="">
         </div>
-        <!-- /.col -->
-        <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+        <div class="col-md-6 col-12">
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+            <div class="row mb-2">
+              <div class="col">
+                  <a href="{{ route('register') }}" class="text-center">Daftar</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <h3>Masuk</h3>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <label for="exampleInputEmail1">Email </label>
+              <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+              @error('email')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+              @enderror
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input  id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+              @error('password')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+              @enderror
+            </div>
+            <div class="form-group form-check">
+              <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+              <label class="form-check-label" for="exampleCheck1"
+                >Ingat Saya</label
+              >
+            </div>
+           <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+          </form>
         </div>
-        <!-- /.col -->
       </div>
-    </form>
-
-    <a href="{{ route('register') }}" class="text-center">Register</a>
-
-  </div>
-  <!-- /.login-box-body -->
-</div>
-<!-- /.login-box -->
-
-<!-- jQuery 3 -->
-<script src="{{asset('template')}}/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="{{asset('template')}}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- iCheck -->
-<script src="{{asset('template')}}/plugins/iCheck/icheck.min.js"></script>
-<script>
-  $(function () {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%' /* optional */
-    });
-  });
-</script>
-<!-- Code injected by live-server -->
-<script type="text/javascript">
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script></body>
+    </div>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("input").iCheck({
+          checkboxClass: "icheckbox_square-blue",
+          radioClass: "iradio_square-blue",
+          increaseArea: "20%" /* optional */,
+        });
+      });
+    </script>
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+  </body>
 </html>

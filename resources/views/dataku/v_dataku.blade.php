@@ -25,11 +25,9 @@
             </div>
                 <div class="text-center">
                 <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah">Tambah Data</a>
-                <a href="/dataku/printer_dataku" target="_blank" class="btn btn-sm bg-maroon">Print To Printer</a>
-                <a href="/dataku/printpdf_dataku" target="_blank" class="btn btn-sm bg-navy">Print To PDF</a>
                 </div>
             <div class="box-body">
-            <table class="table table-bordered table-striped">
+            <table id="table-datatables" class="table table-bordered table-striped">
               <thead>
               <tr>
                 <th class="text-center">Date</th>
@@ -94,8 +92,8 @@
                             <span aria-hidden="true">&times;</span></button>
                             <h5 class="modal-title">TAMBAH DATA</h5>
                         </div>
-                        <form action="/dataku/insert_dataku" method="GET" enctype="multipart/form-data">
-                            {{ csrf_field() }}
+                        <form action="/dataku/insert_dataku/" method="GET" enctype="multipart/form-data">
+                            @csrf
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Tanggal</label>
@@ -178,11 +176,15 @@
                             <span aria-hidden="true">&times;</span></button>
                           <h5 class="modal-title">UPDATE DATA {{ $data->id}}</h5>
                         </div>
-                        <form action="/dataku/update_dataku" method="GET" enctype="multipart/form-data">
+                        <form action="/dataku/update_dataku/" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="modal-body">
                                 <div class="form-group">
                                 <label>Tanggal</label>
                                 <input name="date" type="date" class="form-control" value="{{$data->date}}">
+                                {{-- id dataku --}}
+                                <input type="hidden" name="id" class="form-control" value="{{$data->id}}">
+                                {{-- id dataku --}}
                                 <div class="text-danger">
                                     @error('date')
                                     {{$message}}

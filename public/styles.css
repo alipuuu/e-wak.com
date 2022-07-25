@@ -1,0 +1,715 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.i-kan {
+    color: orangered;
+    font-size: large;
+}
+
+.i-kan-utama {
+    margin-left: 4%;
+}
+
+.splash-fish {
+    max-width: 30vw
+}
+
+.btn-ikan {
+    background-color: orangered;
+    color: white;
+    width: 100%;
+}
+.btn-ikan:hover {
+    background-color:orange;
+    color: white;
+}
+
+.btn-ikan-sub {
+    background-color: orangered;
+    color: white;
+}
+.btn-ikan-sub:hover {
+    background-color:orange;
+    color: white;
+}
+
+a.nav-link {
+    display: flex;
+    align-items: center;
+}
+
+.hero {
+    background-color: yellowgreen;
+}
+
+.card-category {
+    text-decoration: none;
+    color: black;
+    height: 180px;
+}
+
+.img-category {
+    width: 40px;
+}
+
+.card-product {
+    max-height: 10%;
+    z-index: -1;
+}
+
+.img-product {
+    width: 90%;
+    max-height: 20%;
+}
+
+.img-product-description {
+    width: 100%;
+    max-height: 100%;
+    border-radius: 5%;
+}
+
+.p {
+    font-size: small;
+}
+
+.discount {
+    position: absolute;
+    background-color: rgb(255, 196, 0);
+    color: white;
+    padding: 10px;
+    right: -0.5%;
+}
+
+.carousel {
+    background: #EEE;
+}
+
+.carousel img {
+    display: block;
+    height: 200px;
+}
+
+.subscription {
+    background-color: #E5E7EB;
+}
+
+.footer {
+    background-color: #F3F4F6;
+}
+
+.navbar-bottom {
+    background-color: orangered;
+    padding: 5%;
+}
+
+@media screen and ( min-width: 768px ) {
+    .carousel img {
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .splash-fish {
+        display: none;
+    }
+    
+    .produk {
+        margin: 3%;
+    }
+
+    .navbar-top {
+        display: none;
+    }
+
+    .hero {
+        margin-top: 10%;
+    }
+
+    .float {
+        display: none;
+    }
+
+    .footer {
+        padding-bottom: 150px;
+    }
+
+    .img-produk-lg-mobile {
+        object-fit: cover;
+        width: 75vw;
+        height: 75vw;
+        border-radius: 5%;
+        margin-bottom: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .img-produk-lg {
+        display: none;
+    }
+
+    .deskripsi {
+        margin-bottom: 100%;
+    }
+
+}
+
+@media screen and ( min-width: 800px ) {
+    .navbar-bottom{
+        display: none;
+    }
+
+    .img-produk-lg-mobile {
+        display: none;
+    }
+}
+
+.float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index:100;
+}
+
+.my-float{
+    margin-top:16px;
+}
+
+.img-produk-lg {
+    object-fit: cover;
+    width: 35vw;
+    height: 20vw;
+    border-radius: 5%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.i-kan {
+    color: orangered;
+    font-size: large;
+}
+
+.i-kan-utama {
+    margin-left: 4%;
+}
+
+.splash-fish {
+    max-width: 30vw
+}
+
+.btn-ikan {
+    background-color: orangered;
+    color: white;
+    width: 100%;
+}
+.btn-ikan:hover {
+    background-color:orange;
+    color: white;
+}
+
+.btn-ikan-sub {
+    background-color: orangered;
+    color: white;
+}
+.btn-ikan-sub:hover {
+    background-color:orange;
+    color: white;
+}
+
+a.nav-link {
+    display: flex;
+    align-items: center;
+}
+
+.hero {
+    background-color: yellowgreen;
+}
+
+.card-category {
+    text-decoration: none;
+    color: black;
+    height: 180px;
+}
+
+.img-category {
+    width: 40px;
+}
+
+.card-product {
+    max-height: 10%;
+    z-index: -1;
+}
+
+.img-product {
+    width: 90%;
+    max-height: 20%;
+}
+
+.p {
+    font-size: small;
+}
+
+.discount {
+    position: absolute;
+    background-color: rgb(255, 196, 0);
+    color: white;
+    padding: 10px;
+    right: -0.5%;
+}
+
+.carousel {
+    background: #EEE;
+}
+
+.carousel img {
+    display: block;
+    height: 200px;
+}
+
+.subscription {
+    background-color: #E5E7EB;
+}
+
+.footer {
+    background-color: #F3F4F6;
+}
+
+.navbar-bottom {
+    background-color: orangered;
+    padding: 5%;
+}
+
+@media screen and ( min-width: 768px ) {
+    .carousel img {
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .splash-fish {
+        display: none;
+    }
+    
+    .produk {
+        margin: 3%;
+    }
+
+    .navbar-top {
+        display: none;
+    }
+
+    .hero {
+        margin-top: 10%;
+    }
+
+    .float {
+        display: none;
+    }
+
+    .footer {
+        padding-bottom: 150px;
+    }
+
+    .img-product {
+        object-fit: cover;
+        width: 50vw;
+        height: 50vw;
+        border-radius: 5%;
+    }
+
+}
+
+@media screen and ( min-width: 800px ) {
+    .navbar-bottom{
+        display: none;
+    }
+
+    .img-product {
+        object-fit: cover;
+        width: 15vw;
+        height: 15vw;
+        border-radius: 5%;
+    }
+}
+
+.float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index:100;
+}
+
+.my-float{
+    margin-top:16px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.i-kan {
+    color: orangered;
+    font-size: large;
+}
+
+.i-kan-utama {
+    margin-left: 4%;
+}
+
+.splash-fish {
+    max-width: 30vw
+}
+
+.btn-ikan {
+    background-color: orangered;
+    color: white;
+    width: 100%;
+}
+.btn-ikan:hover {
+    background-color:orange;
+    color: white;
+}
+
+.btn-ikan-sub {
+    background-color: orangered;
+    color: white;
+}
+.btn-ikan-sub:hover {
+    background-color:orange;
+    color: white;
+}
+
+a.nav-link {
+    display: flex;
+    align-items: center;
+}
+
+.hero {
+    background-color: yellowgreen;
+}
+
+.card-category {
+    text-decoration: none;
+    color: black;
+    height: 180px;
+}
+
+.img-category {
+    width: 40px;
+}
+
+.card-product {
+    max-height: 10%;
+    z-index: -1;
+}
+
+.img-product {
+    width: 90%;
+    max-height: 20%;
+}
+
+.p {
+    font-size: small;
+}
+
+.discount {
+    position: absolute;
+    background-color: rgb(255, 196, 0);
+    color: white;
+    padding: 10px;
+    right: -0.5%;
+}
+
+.carousel {
+    background: #EEE;
+}
+
+.carousel img {
+    display: block;
+    height: 200px;
+}
+
+.subscription {
+    background-color: #E5E7EB;
+}
+
+.footer {
+    background-color: #F3F4F6;
+}
+
+.navbar-bottom {
+    background-color: orangered;
+    padding: 5%;
+}
+
+@media screen and ( min-width: 768px ) {
+    .carousel img {
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .splash-fish {
+        display: none;
+    }
+    
+    .produk {
+        margin: 3%;
+    }
+
+    .navbar-top {
+        display: none;
+    }
+
+    .hero {
+        margin-top: 10%;
+    }
+
+    .float {
+        display: none;
+    }
+
+    .footer {
+        padding-bottom: 150px;
+    }
+
+    .img-product {
+        object-fit: cover;
+        width: 50vw;
+        height: 50vw;
+        border-radius: 5%;
+    }
+
+}
+
+@media screen and ( min-width: 800px ) {
+    .navbar-bottom{
+        display: none;
+    }
+
+    .img-product {
+        object-fit: cover;
+        width: 15vw;
+        height: 15vw;
+        border-radius: 5%;
+    }
+}
+
+.float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index:100;
+}
+
+.my-float{
+    margin-top:16px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.i-kan {
+    color: orangered;
+    font-size: large;
+}
+
+.i-kan-utama {
+    margin-left: 4%;
+}
+
+.splash-fish {
+    max-width: 30vw
+}
+
+.btn-ikan {
+    background-color: orangered;
+    color: white;
+    width: 100%;
+}
+.btn-ikan:hover {
+    background-color:orange;
+    color: white;
+}
+
+.btn-ikan-sub {
+    background-color: orangered;
+    color: white;
+}
+.btn-ikan-sub:hover {
+    background-color:orange;
+    color: white;
+}
+
+a.nav-link {
+    display: flex;
+    align-items: center;
+}
+
+.hero {
+    background-color: yellowgreen;
+}
+
+.card-category {
+    text-decoration: none;
+    color: black;
+    height: 180px;
+}
+
+.img-category {
+    width: 40px;
+}
+
+.card-product {
+    max-height: 10%;
+    z-index: -1;
+}
+
+.img-product {
+    width: 90%;
+    max-height: 20%;
+}
+
+.p {
+    font-size: small;
+}
+
+.discount {
+    position: absolute;
+    background-color: rgb(255, 196, 0);
+    color: white;
+    padding: 10px;
+    right: -0.5%;
+}
+
+.carousel {
+    background: #EEE;
+}
+
+.carousel img {
+    display: block;
+    height: 200px;
+}
+
+.subscription {
+    background-color: #E5E7EB;
+}
+
+.footer {
+    background-color: #F3F4F6;
+}
+
+.navbar-bottom {
+    background-color: orangered;
+    padding: 5%;
+}
+
+@media screen and ( min-width: 768px ) {
+    .carousel img {
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .splash-fish {
+        display: none;
+    }
+    
+    .produk {
+        margin: 3%;
+    }
+
+    .navbar-top {
+        display: none;
+    }
+
+    .hero {
+        margin-top: 10%;
+    }
+
+    .float {
+        display: none;
+    }
+
+    .footer {
+        padding-bottom: 150px;
+    }
+
+    .product-cart {
+        object-fit: cover;
+        width: 20vw;
+        height: 20vw;
+        border-radius: 5%;
+    }
+
+}
+
+@media screen and ( min-width: 800px ) {
+    .navbar-bottom{
+        display: none;
+    }
+
+    .product-cart {
+        object-fit: cover;
+        width: 4vw;
+        height: 4vw;
+        border-radius: 5%;
+    }
+}
+
+.float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index:100;
+}
+
+.my-float{
+    margin-top:16px;
+}
+
+.checkbox {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+    display: block;
+}
+

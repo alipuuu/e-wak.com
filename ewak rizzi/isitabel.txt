@@ -1,0 +1,21 @@
+                    <?php $no=1; ?>
+                    @foreach ($olahan as $data)
+                        <tr>
+                            <td class="text-center">{{ $no++ }}</td>
+                            <td class="text-center">{{ $data->id}}</td>
+                            <td class="text-center">{{ $data->tanggal}}</td>
+                            <td class="text-center">{{ $data->source_id}}</td>
+                            <td class="text-center">{{ $data->crew}}</td>
+                            <td class="text-center">{{ $data->dest_id}}</td>
+                            <td class="text-center">{{ $data->lat}}</td>
+                            <td class="text-center">{{ $data->longitude}}</td>
+                            <td class="text-center">{{ $data->message}}</td>
+                            <td >
+                                <a href="/olahan/detail/{{ $data->id}}" class="btn btn-sm btn-success">Detail</a>
+                                <a href="/olahan/edit/{{ $data->id}}" class="btn btn-sm btn-warning">Edit</a>
+                                <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete{{ $data->id}}">
+                                Delete
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach

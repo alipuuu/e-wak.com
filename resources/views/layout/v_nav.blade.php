@@ -1,5 +1,7 @@
 <ul class="sidebar-menu" data-widget="tree">
-    <li><a href="/home"><i class="fa fa-home"></i> <span>Home</span></a></li>
+    @if (auth()->user()->level==1)
+    {{-- <li><a href="/home"><i class="fa fa-home"></i> <span>Home</span></a></li> --}}
+    <li><a href="/user"><i class="fa fa-user"></i> <span>User</span></a></li>
     <li class="active treeview">
         <a href="#">
         <i class="fa fa-folder"></i> <span>Dashboard</span>
@@ -17,9 +19,7 @@
             <li class="active"><a href="/track"><i class="fa fa-book"></i> <span>Track</span></a></li>
           </ul>
     </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-circle"></i> <span>Lain - lain</span>
-          </a>
-        </li>
+        @elseif (auth()->user()->level==2)
+         <li><a href="/home"><i class="fa fa-home"></i> <span>Home</span></a></li>
+        @endif
 </ul>

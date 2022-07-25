@@ -26,11 +26,9 @@
             </div>
                 <div class="text-center">
                 <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah">Tambah Data</a>
-                <a href="/kapal/printer_kapal" target="_blank" class="btn btn-sm bg-maroon">Print To Printer</a>
-                <a href="/kapal/printpdf_kapal" target="_blank" class="btn btn-sm bg-navy">Print To PDF</a>
                 </div>
             <div class="box-body">
-            <table id="example1" class="table table-bordered table-striped">
+            <table id="table-datatables" class="table table-bordered table-striped">
               <thead>
               <tr>
                 <th class="text-center">Source ID</th>
@@ -50,7 +48,7 @@
                         <td class="text-center">{{ $data->source_id}}</td>
                         <td class="text-center">{{ $data->pemilik_kapal}}</td>
                         <td class="text-center">
-                            <img src="{{ asset('foto_kapal/'.$data->foto_kapal) }}" alt='' style="width:150px">
+                            <img src="{{ url('foto_kapal/'.$data->foto_kapal) }}" alt='' style="width:150px">
                         </td>
                         <td class="text-center">{{ $data->crew}}</td>
                         <td class="text-center">{{ $data->contact}}</td>
@@ -77,7 +75,7 @@
                            <p>Pemilik Kapal : {{ $data->pemilik_kapal}}</p>
                            <p>Foto Kapal :{{ $data->foto_kapal}} </p>
                            <p>
-                            <img src="{{ asset('foto_kapal/'.$data->foto_kapal) }}" alt='' style="width:150px">
+                            <img src="{{ url('foto_kapal/'.$data->foto_kapal) }}" alt='' style="width:150px">
                            </p>
                            <p>Crew : {{ $data->crew}}</p>
                            <p>Contact : {{ $data->contact}}</p>
@@ -94,8 +92,8 @@
                             <span aria-hidden="true">&times;</span></button>
                             <h5 class="modal-title">TAMBAH DATA</h5>
                         </div>
-                        <form action="/kapal/insert_kapal" method="GET" enctype="multipart/form-data">
-                            {{ csrf_field() }}
+                        <form action="/kapal/insert_kapal" method="POST" enctype="multipart/form-data">
+                            @csrf
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Source ID</label>
@@ -118,7 +116,7 @@
                             <div class="form-group">
                                 <div class="form-group">
                                 <label>Foto Kapal</label>
-                                <input type="file" name="foto_kapal" class="form-control">
+                                <input type="file" name="foto_kapal" class="form-control" value="{{old('foto_kapal')}}" >
                                 <div class="text-danger">
                                     @error('foto_kapal')
                                     {{$message}}
@@ -149,6 +147,7 @@
                             <button class="btn btn-primary" type="submit">Save Data</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -162,10 +161,14 @@
                           <h5 class="modal-title">UPDATE DATA {{ $data->id}}</h5>
                         </div>
                         <form action="/kapal/update_kapal" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="modal-body">
                             <div class="form-group">
                                 <label>Source ID</label>
-                                <input name="source_id" class="form-control" value="{{old('source_id')}}">
+                                <input name="source_id" class="form-control" value="{{$data->source_id}}">
+                                {{-- id kapal --}}
+                                <input type="hidden" name="id" class="form-control" value="{{$data->id}}">
+                                {{-- id kapal --}}
                                 <div class="text-danger">
                                     @error('source_id')
                                     {{$message}}
@@ -174,7 +177,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Pemilik Kapal</label>
-                                <input name="pemilik_kapal" class="form-control" value="{{old('pemilik_kapal')}}">
+                                <input name="pemilik_kapal" class="form-control" value="{{$data->pemilik_kapal}}">
                                 <div class="text-danger">
                                     @error('pemilik_kapal')
                                     {{$message}}
@@ -199,7 +202,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Crew</label>
-                                <input name="crew" class="form-control" value="{{old('crew')}}">
+                                <input name="crew" class="form-control" value="{{$data->crew}}">
                                 <div class="text-danger">
                                     @error('crew')
                                     {{$message}}
@@ -208,7 +211,7 @@
                             </div>
                              <div class="form-group">
                                 <label>Contact</label>
-                                <input name="contact" class="form-control" value="{{old('contact')}}">
+                                <input name="contact" class="form-control" value="{{$data->contact}}">
                                 <div class="text-danger">
                                     @error('contact')
                                     {{$message}}
@@ -216,7 +219,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                            <button class="btn btn-primary" type="submit">Updade Data</button>
+                            <button class="btn btn-primary" type="submit">Update Data</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                             </div>

@@ -9,11 +9,9 @@
             </div>
                 <div class="text-center">
                 <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tambah">Tambah Data</a>
-                <a href="/track/printer_track" target="_blank" class="btn btn-sm bg-maroon">Print To Printer</a>
-                <a href="/track/printpdf_track" target="_blank" class="btn btn-sm bg-navy">Print To PDF</a>
                 </div>
             <div class="box-body">
-            <table id="example1" class="table table-bordered table-striped">
+            <table id="table-datatables" class="table table-bordered table-striped">
               <thead>
               <tr>
                 <th class="text-center">Source ID</th>
@@ -43,7 +41,7 @@
                         <td class="text-center">{{ $data->updated_at}}</td>
                         <td class="text-center">
                             <a class="btn btn-sm btn-success" data-toggle="modal" data-target="#detail{{ $data->id}}">Detail</a>
-                            <a class="btn btn-sm btn-warning" data-toggle="modal" data-target="#update{{ $data->id}}">Upadate</a>
+                            <a class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit{{ $data->id}}">Edit</a>
                             <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete{{ $data->id}}">Delete</a>
                         </td>
                     </tr>
@@ -56,7 +54,7 @@
                             <span aria-hidden="true">&times;</span></button>
                             <h5 class="modal-title">TAMBAH DATA</h5>
                         </div>
-                        <form action="/track/insert_track" method="POST" enctype="multipart/form-data">
+                        <form action="/track/insert_track" method="GET" enctype="multipart/form-data">
                             @csrf
                         <div class="modal-body">
                             <div class="form-group">
@@ -127,23 +125,28 @@
                             <button class="btn btn-primary" type="submit">Save Data</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
+                        </form>
                         </div>
                     </div>
                 </div>
                 @foreach ($track as $data)
-                  <div class="modal fade" id="update{{ $data->id}}">
+                  <div class="modal fade" id="edit{{ $data->id}}">
                     <div class="modal-dialog modal-lg">
                       <div class="modal-content">
                         <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span></button>
-                          <h5 class="modal-title">UPDATE DATA {{ $data->id}}</h5>
+                          <h5 class="modal-title">EDIT DATA {{ $data->id}}</h5>
                         </div>
                         <form action="/track/update_track" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label>Source ID</label>
                                     <input name="source_id" class="form-control" value="{{$data->source_id}}">
+                                    {{-- id track --}}
+                                    <input type="hidden" name="id" class="form-control" value="{{$data->id}}">
+                                    {{-- id track --}}
                                     <div class="text-danger">
                                         @error('source_id')
                                         {{$message}}
